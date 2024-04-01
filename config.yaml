@@ -1,0 +1,8 @@
+path: '/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/data'
+train: 'train'
+val: 'valid'
+test: 'test'
+
+# Classes
+names:
+  0: 'License_Plate'
