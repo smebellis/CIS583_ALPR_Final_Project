@@ -13,3 +13,6 @@ model_paths:
   license_plate_detector: "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/models/license_plate_detector.pt"
 
 video_path: "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/videos/sample.mp4"
+
+
+interpolated_csv_path: "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/test_interpolated.csv"

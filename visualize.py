@@ -3,6 +3,7 @@ import ast
 import cv2
 import numpy as np
 import pandas as pd
+import yaml
 
 
 def draw_border(
@@ -36,9 +37,14 @@ def draw_border(
     return img
 
 
-results = pd.read_csv(
-    "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/test_interpolated.csv"
-)
+with open(
+    "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/config.yaml", "r"
+) as file:
+    config = yaml.safe_load(file)
+
+test_interpolated_csv = config["interpolated_csv_path"]
+
+results = pd.read_csv(test_interpolated_csv)
 
 # load video
 video_path = "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/videos/sample.mp4"
