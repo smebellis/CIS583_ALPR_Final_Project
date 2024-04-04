@@ -11,10 +11,11 @@ Before you begin, ensure you have met the following requirements:
 - ast
 - numpy
 - scipy interpolate
+- PyYAML
 
 ## Configuration
 
-Consider using a configuration file for paths and other settings. Edit the provided `config.yml` (or similar) to match your local setup.
+Edit the provided `config.yml` to match your local setup.
 
 ## Getting Started
 

@@ -2,27 +2,32 @@ import cv2
 from ultralytics import YOLO
 import numpy as np
 
-from sort import *
+from sort.sort import *
 from util import get_car, read_license_plate, write_csv
+import yaml
 
 
 results = {}
 
 mot_tracker = Sort()
 
+config_path = "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/config.yaml"
+
+with open(config_path, "r") as file:
+    config = yaml.safe_load(file)
+
+coco_model_path = config["model_paths"]["coco_model"]
+license_plate_detector_path = config["model_paths"]["license_plate_detector"]
+video_path = config["video_path"]
+
 # load models
-coco_model = YOLO(
-    "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/models/yolov8n.pt"
-)
-license_plate_detector = YOLO(
-    "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/models/license_plate_detector.pt"
-)
+coco_model = YOLO(coco_model_path)
+license_plate_detector = YOLO(license_plate_detector_path)
 
 # load video
-cap = cv2.VideoCapture(
-    "/home/smebellis/CIS583_ALPR_Final_project_3-24-2024/videos/sample.mp4"
-)
+cap = cv2.VideoCapture(video_path)
 
+breakpoint()
 vehicles = [2, 3, 5, 7]
 
 # read frames
