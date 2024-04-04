@@ -27,7 +27,6 @@ license_plate_detector = YOLO(license_plate_detector_path)
 # load video
 cap = cv2.VideoCapture(video_path)
 
-breakpoint()
 vehicles = [2, 3, 5, 7]
 
 # read frames
