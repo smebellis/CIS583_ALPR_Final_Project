@@ -67,6 +67,7 @@ for result in results.boxes.data.tolist():
         )
 
         license_plate_crop = frame[int(y1) : int(y2), int(x1) : int(x2)]
+
         height, width, _ = license_plate_crop.shape
         center_x, center_y = width // 2, height // 2
         # Read the license plate text
